@@ -1,8 +1,10 @@
+if("DT" %in% rownames(installed.packages()) == FALSE) {install.packages("DT")}
+if("readxl" %in% rownames(installed.packages()) == FALSE) {install.packages("readxl")}
 library(DT)
 library(readxl)
+
 attributes <- read.csv("~/Smash/data/attributes.csv", row.names = 1)
 vs <- read.csv("~/Smash/data/vs.csv", row.names = 1)
-# load excel workbook
 path <- "~/Smash/data/frames.xlsx"
 sheets <- excel_sheets(path)
 sheet_list <- lapply(sheets, function(f){
