@@ -5,7 +5,7 @@ library(readxl)
 
 attributes <- read.csv("/data/attributes.csv", row.names = 1)
 vs <- read.csv("/data/vs.csv", row.names = 1)
-path <- cat(getwd(),"/data/frames.xlsx")
+path <- "/data/frames.xlsx"
 sheets <- excel_sheets(path)
 sheet_list <- lapply(sheets, function(f){
   read_excel(path, sheet = f)
