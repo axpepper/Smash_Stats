@@ -3,9 +3,9 @@ if("readxl" %in% rownames(installed.packages()) == FALSE) {install.packages("rea
 library(DT)
 library(readxl)
 
-attributes <- read.csv("/data/attributes.csv", row.names = 1)
-vs <- read.csv("/data/vs.csv", row.names = 1)
-path <- "/data/frames.xlsx"
+attributes <- read.csv(cat(getwd(),"/data/attributes.csv",sep=''), row.names = 1)
+vs <- read.csv(cat(getwd(),"/data/vs.csv",sep=''), row.names = 1)
+path <- cat(getwd(),"/data/frames.xlsx",sep='')
 sheets <- excel_sheets(path)
 sheet_list <- lapply(sheets, function(f){
   read_excel(path, sheet = f)
